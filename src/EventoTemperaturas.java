@@ -181,14 +181,29 @@ class ventanaPrincipal extends JFrame implements ActionListener {
 			if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Fahrenheit.")) {
 				res = conv.CelsiusToFahrenheit(grados);
 				txtSalida.setText(res+"");
+				if(salida.getSelectedItem().equals("Centigrados.")) {
+					txtSalida.setText(grados+"");
+				}
 				salida.removeAllItems();
 			} else if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Kelvin.")) {
 				res = conv.CelsiusToKelvin(grados);
 				txtSalida.setText(res+"");
+				if(salida.getSelectedItem().equals("Centigrados.")) {
+					txtSalida.setText(grados+"");
+				}
 			} else if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Rankine.")) {
 				res = conv.CelsiusToRankine(grados);
 				txtSalida.setText(res+"");
-			}
+				if(salida.getSelectedItem().equals("Centigrados.")) {
+					txtSalida.setText(grados+"");
+				}
+			} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Rankine.")) {
+				res = conv.CelsiusToRankine(grados);
+				txtSalida.setText(res+"");
+				if(salida.getSelectedItem().equals("Centigrados.")) {
+					txtSalida.setText(grados+"");
+				}
+			} 
 	
 	}
 
