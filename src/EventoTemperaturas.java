@@ -71,14 +71,12 @@ class Conversiones {
 		return fahrenheit;
 	}
 	
-	public double RankineTokelvin(double rankine) {
+	public double RankineToKelvin(double rankine) {
 		double kelvin = rankine/ 1.8;
 		return kelvin;
 	}
 	
 }
-
-
 
 class ventanaPrincipal extends JFrame implements ActionListener {
 	
@@ -141,7 +139,7 @@ class ventanaPrincipal extends JFrame implements ActionListener {
 		add(igual);
 		
 		txtSalida = new JTextField();
-			txtSalida.setBounds(180, 50, 100, 25);
+			txtSalida.setBounds(180, 50, 120, 25);
 			txtSalida.addActionListener(this);
 			txtSalida.setEnabled(false);
 		add(txtSalida);
@@ -171,56 +169,53 @@ class ventanaPrincipal extends JFrame implements ActionListener {
 		});
 	}
 
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
 		double grados = Double.parseDouble(txtEntrada.getText());
 		double res;
 		
-			if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Fahrenheit.")) {
-				res = conv.CelsiusToFahrenheit(grados);
-				txtSalida.setText(res+"");
-				if(salida.getSelectedItem().equals("Centigrados.")) {
-					txtSalida.setText(grados+"");
-				}
-				salida.removeAllItems();
-			} else if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Kelvin.")) {
-				res = conv.CelsiusToKelvin(grados);
-				txtSalida.setText(res+"");
-				if(salida.getSelectedItem().equals("Centigrados.")) {
-					txtSalida.setText(grados+"");
-				}
-			} else if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Rankine.")) {
-				res = conv.CelsiusToRankine(grados);
-				txtSalida.setText(res+"");
-				if(salida.getSelectedItem().equals("Centigrados.")) {
-					txtSalida.setText(grados+"");
-				}
-			} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Centigrados.")) {
-				res = conv.FahrenheitToCelsius(grados);
-				txtSalida.setText(res+"");
-				if(salida.getSelectedItem().equals("Fahrenheit.")) {
-					txtSalida.setText(grados+"");
-				}
-			} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Kelvin.")) {
-				res = conv.FahrenheitToKelvin(grados);
-				txtSalida.setText(res+"");
-				if(salida.getSelectedItem().equals("Fahrenheit.")) {
-					txtSalida.setText(grados+"");
-				}
-			} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Rankine.")) {
-				res = conv.FahrenheitToRankine(grados);
-				txtSalida.setText(res+"");
-				if(salida.getSelectedItem().equals("Fahrenheit.")) {
-					txtSalida.setText(grados+"");
-				}
-			} 
-	
+		
+		if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Fahrenheit.")) {
+			res = conv.CelsiusToFahrenheit(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Kelvin.")) {
+			res = conv.CelsiusToKelvin(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Centigrados.") && salida.getSelectedItem().equals("Rankine.")) {
+			res = conv.CelsiusToRankine(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Centigrados.")) {
+			res = conv.FahrenheitToCelsius(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Kelvin.")) {
+			res = conv.FahrenheitToKelvin(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Fahrenheit.") && salida.getSelectedItem().equals("Rankine.")) {
+			res = conv.FahrenheitToRankine(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Kelvin.") && salida.getSelectedItem().equals("Centigrados.")) {
+			res = conv.KelvinToCelsius(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Kelvin.") && salida.getSelectedItem().equals("Fahrenheit.")) {
+			res = conv.KelvinToFahrenheit(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Kelvin.") && salida.getSelectedItem().equals("Rankine.")) {
+			res = conv.KelvinToRankine(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Rankine.") && salida.getSelectedItem().equals("Centigrados.")) {
+			res = conv.RankineToCelsius(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Rankine.") && salida.getSelectedItem().equals("Fahrenheit.")) {
+			res = conv.RankineToFahrenheit(grados);
+			txtSalida.setText(res+"");
+		} else if(entrada.getSelectedItem().equals("Rankine.") && salida.getSelectedItem().equals("Kelvin.")) {
+			res = conv.RankineToKelvin(grados);
+			txtSalida.setText(res+"");
+		}	
 	}
-
-
 }
+
 
 public class EventoTemperaturas {
 
